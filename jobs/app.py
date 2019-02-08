@@ -56,7 +56,7 @@ def review(employer_id):
         title = request.form['title']
         status = request.form['status']
         
-        date = datetime.datetime.now().strfttime("%m/%d/%y")
+        date = datetime.datetime.now().strftime("%m/%d/%Y")
         execute_sql('INSERT INTO review (review, rating, title, date, status, employer_id) VALUES (?, ?, ?, ?, ?, ?)',
                     (review, rating, title, date, status, employer_id), commit=True)
         
